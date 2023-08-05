@@ -1,0 +1,10 @@
+class: Driver
+table: drivers
+fields:
+  userId: int
+  licenseNumber: int
+  licenseExpiryDate: DateTime
+  status: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime

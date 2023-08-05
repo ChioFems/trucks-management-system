@@ -1,0 +1,7 @@
+class: Role
+table: roles
+fields:
+  name: String
+  status: String
+  modifiedBy: int
+  createdDate: DateTime

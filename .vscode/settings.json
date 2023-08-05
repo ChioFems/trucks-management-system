@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 8090,
+      "driver": "PostgreSQL",
+      "name": "mytrucksdatabase",
+      "database": "trucks",
+      "username": "postgres",
+      "password": "VZCWQzo1HuXo3Seq6prkdYF7KKbEkLF-"
+    }
+  ]
+}

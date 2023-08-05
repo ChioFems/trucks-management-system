@@ -1,0 +1,33 @@
+# class: User
+# table: users
+# fields:
+#   firstName: String
+#   lastName: String
+#   nidaNumber: String
+#   dateOfBirth: DateTime
+#   mobileNumber: int
+#   email: String?
+#   roleId: int, parent=roles
+#   gender: String
+#   image: String?
+#   status: String
+#   hasAccount: bool
+#   password: String?
+#   createdDate: DateTime
+#   modifiedDate: DateTime
+
+# Navigated to serverpod auth table
+class: User
+table: users
+fields:
+  userId: int
+  firstName: String
+  lastName: String
+  nidaNumber: String
+  dateOfBirth: DateTime
+  phone: int
+  roleId: int, parent=roles
+  gender: String
+  status: String
+  createdDate: DateTime
+  modifiedDate: DateTime

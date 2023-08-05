@@ -1,0 +1,9 @@
+class: TruckModel
+table: truck_models
+fields:
+  brandName: String
+  modelName: String
+  status: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime

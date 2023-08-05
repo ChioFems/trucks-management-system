@@ -1,0 +1,8 @@
+class: TruckCargoType
+table: truck_cargo_types
+fields:
+  cargoTypeName: String
+  status: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime

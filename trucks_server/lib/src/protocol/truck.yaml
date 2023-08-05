@@ -1,0 +1,17 @@
+class: Truck
+table: trucks
+fields:
+  truckName: String
+  truckModelId: int, parent=truck_models
+  registrationNumber: String
+  registrationDate: DateTime
+  bodyTypeId: int?, parent=truck_body_types
+  cargoTypeId: int?, parent=truck_cargo_types
+  maxLoadingCapacity: int?
+  truckCc: int
+  defaultTruckLocation: String?
+  fuelConsumptionPerKm: int?
+  status: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime

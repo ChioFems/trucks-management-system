@@ -1,0 +1,9 @@
+class: TruckDriver
+table: truck_drivers
+fields:
+  truckId: int, parent=trucks
+  driverId: int, parent=drivers
+  truckStatus: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime

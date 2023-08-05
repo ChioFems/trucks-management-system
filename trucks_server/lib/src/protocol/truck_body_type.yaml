@@ -1,0 +1,8 @@
+class: TruckBodyType
+table: truck_body_types
+fields:
+  bodyName: String
+  status: String
+  modifiedBy: int
+  createdDate: DateTime
+  modifiedDate: DateTime
