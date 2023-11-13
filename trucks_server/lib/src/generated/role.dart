@@ -45,6 +45,7 @@ class Role extends _i1.TableRow {
 
   @override
   String get tableName => 'roles';
+
   @override
   Map<String, dynamic> toJson() {
     return {

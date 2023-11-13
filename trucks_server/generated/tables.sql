@@ -119,6 +119,8 @@ CREATE INDEX serverpod_user_info_email ON "serverpod_user_info" USING btree ("em
 --     '2023/8/2'
 --   );
 -- --
+-- DELETE FROM serverpod_user_info WHERE id IN (1);
+-- --
 -- CREATE TABLE "truck_models" (
 --   "id" serial,
 --   "brandName" varchar(255) NOT NULL,
@@ -130,6 +132,8 @@ CREATE INDEX serverpod_user_info_email ON "serverpod_user_info" USING btree ("em
 -- );
 -- ALTER TABLE ONLY "truck_models"
 --   ADD CONSTRAINT truck_models_pkey PRIMARY KEY (id);
+-- ALTER TABLE ONLY "truck_models"
+-- ADD CONSTRAINT truck_models_uk_brand_name_model_name UNIQUE ("brandName", "modelName");
 -- --
 -- -- Class TruckBodyType as table truck_body_types
 -- --

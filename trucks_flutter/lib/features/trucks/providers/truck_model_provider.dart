@@ -21,7 +21,7 @@ class TruckModelProvider extends StateNotifier<List<TruckModel>> {
     String status = 'Active',
     required int modifiedBy,
     required DateTime createdDate,
-    required DateTime modifiedDate,
+    required modifiedDate,
   }) async {
     await truckModelClient.create(
       brandName: brandName,
@@ -31,6 +31,12 @@ class TruckModelProvider extends StateNotifier<List<TruckModel>> {
       createdDate: createdDate,
       modifiedDate: modifiedDate,
     );
+    load();
+  }
+
+  delete(int index) async {
+    final truckModel = state[index];
+    await truckModelClient.delete(truckModel.id!);
     load();
   }
 }

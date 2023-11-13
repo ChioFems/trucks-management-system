@@ -366,18 +366,18 @@ class _EndpointTruckModel extends _i1.EndpointRef {
         },
       );
 
-  _i2.Future<_i9.TruckModel?> read(int truckModelId) =>
-      caller.callServerEndpoint<_i9.TruckModel?>(
-        'truckModel',
-        'read',
-        {'truckModelId': truckModelId},
-      );
-
   _i2.Future<List<_i9.TruckModel>> readAll() =>
       caller.callServerEndpoint<List<_i9.TruckModel>>(
         'truckModel',
         'readAll',
         {},
+      );
+
+  _i2.Future<_i9.TruckModel?> read(int truckModelId) =>
+      caller.callServerEndpoint<_i9.TruckModel?>(
+        'truckModel',
+        'read',
+        {'truckModelId': truckModelId},
       );
 
   _i2.Future<_i9.TruckModel> update(_i9.TruckModel truckModel) =>
@@ -499,6 +499,7 @@ class Client extends _i1.ServerpodClient {
         'truckModel': truckModel,
         'user': user,
       };
+
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup =>
       {'auth': modules.auth};

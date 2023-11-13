@@ -56,6 +56,7 @@ class TruckDriver extends _i1.TableRow {
 
   @override
   String get tableName => 'truck_drivers';
+
   @override
   Map<String, dynamic> toJson() {
     return {

@@ -20,12 +20,13 @@ class TruckModelEndpoint extends Endpoint {
     required DateTime modifiedDate,
   }) async {
     final userId = await session.auth.authenticatedUserId;
+    if (userId == null) return false;
 
     final truckModel = TruckModel(
       brandName: brandName,
       modelName: modelName,
       status: status,
-      modifiedBy: userId!,
+      modifiedBy: userId,
       createdDate: createdDate,
       modifiedDate: modifiedDate,
     );
@@ -34,12 +35,19 @@ class TruckModelEndpoint extends Endpoint {
     return true;
   }
 
-  Future<TruckModel?> read(Session session, int truckModelId) async {
-    return await TruckModel.findById(session, truckModelId);
+  Future<List<TruckModel>> readAll(Session session) async {
+    final userId = await session.auth.authenticatedUserId;
+    if (userId == null) return [];
+
+    // returns list of all data
+    return await TruckModel.find(session);
+    // returns list of all data, respectively for the logged in user (example safari/trips data)
+    // return await TripModel.find(session,
+    //     where: (item) => item.userId.equals(userId));
   }
 
-  Future<List<TruckModel>> readAll(Session session) async {
-    return await TruckModel.find(session);
+  Future<TruckModel?> read(Session session, int truckModelId) async {
+    return await TruckModel.findById(session, truckModelId);
   }
 
   Future<TruckModel> update(Session session, TruckModel truckModel) async {
@@ -47,8 +55,16 @@ class TruckModelEndpoint extends Endpoint {
     return truckModel;
   }
 
-  Future<void> delete(Session session, int truckModelId) async {
-    await TruckModel.delete(session,
-        where: (truckModel) => truckModel.id.equals(truckModelId));
+  // Future<void> delete(Session session, int truckModelId) async {
+  //   await TruckModel.delete(session,
+  //       where: (truckModel) => truckModel.id.equals(truckModelId));
+  // }
+
+  Future<bool> delete(Session session, int truckModelId) async {
+    final userId = await session.auth.authenticatedUserId;
+    if (userId == null) return false;
+    TruckModel.delete(session, where: (item) => item.id.equals(truckModelId));
+
+    return false;
   }
 }

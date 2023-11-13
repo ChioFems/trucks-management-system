@@ -825,6 +825,16 @@ class Endpoints extends _i1.EndpointDispatch {
             modifiedDate: params['modifiedDate'],
           ),
         ),
+        'readAll': _i1.MethodConnector(
+          name: 'readAll',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['truckModel'] as _i9.TruckModelEndpoint)
+                  .readAll(session),
+        ),
         'read': _i1.MethodConnector(
           name: 'read',
           params: {
@@ -842,16 +852,6 @@ class Endpoints extends _i1.EndpointDispatch {
             session,
             params['truckModelId'],
           ),
-        ),
-        'readAll': _i1.MethodConnector(
-          name: 'readAll',
-          params: {},
-          call: (
-            _i1.Session session,
-            Map<String, dynamic> params,
-          ) async =>
-              (endpoints['truckModel'] as _i9.TruckModelEndpoint)
-                  .readAll(session),
         ),
         'update': _i1.MethodConnector(
           name: 'update',

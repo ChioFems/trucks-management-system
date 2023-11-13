@@ -61,6 +61,7 @@ class Driver extends _i1.TableRow {
 
   @override
   String get tableName => 'drivers';
+
   @override
   Map<String, dynamic> toJson() {
     return {
